@@ -1,10 +1,9 @@
 import { Router } from "express"
-const { request } = require("./app")
 
+import UserController from "./app/controllers/UserController"
 const routes = new Router()
 
-routes.get('/', (request, response) => {
-    return response.json({message: "Olá Mundo"})
-})
+routes.post('/users', UserController.store)
+
 
 export default routes
